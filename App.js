@@ -18,8 +18,8 @@ export default class App extends Component {
     const app_name = await AsyncStorage.getItem('app_name');
     console.log(JSON.parse(app_name));*/
 
-    console.log(MainStore.name)
-    console.log(MainStore.getName())
+   // console.log(MainStore.name)
+    // console.log(MainStore.getName())
 
   };
 

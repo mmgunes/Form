@@ -12,11 +12,14 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { observer } from 'mobx-react';
 
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import MainStore from '../../Store/MainStore'
+import MainStore from '../../Store/MainStore';
 
+
+@observer
 
 export default class Login extends Component {
 
@@ -29,7 +32,7 @@ constructor(){
 
 componentDidMount(){
  // console.log(MainStore.name+' başka sayfa da')
-  alert(MainStore.name+' başka sayfadan da çağırabilirsin')
+  //alert(MainStore.name+' başka sayfadan da çağırabilirsin')
 
 }
 
@@ -37,7 +40,10 @@ componentDidMount(){
     return (
       <SafeAreaView style={style.body}>
         <View style={style.header}>
+         
           <Text style={style.title}>Sıgn In</Text>
+          <Text>{MainStore.name}</Text>
+          <TouchableOpacity onPress={()=>MainStore.setName('Ali Veli')} style={{borderWidth:1, borderRadius:10, padding:5}}><Text>Değiştir</Text></TouchableOpacity>  
         </View>
         <View style={style.logo_area}>
           <Image source={require('../../../assets/images/home.png')} />
