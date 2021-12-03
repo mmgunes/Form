@@ -4,6 +4,7 @@ import {View, Text} from 'react-native';
 import Login from './src/screens/Login';
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { observable } from 'mobx';
 
 export default class App extends Component {
 
