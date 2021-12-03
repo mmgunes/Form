@@ -15,6 +15,8 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import MainStore from '../../Store/MainStore'
+
 
 export default class Login extends Component {
 
@@ -23,6 +25,12 @@ constructor(){
   this.state={
     sifreGizleGoster: true,
   }
+}
+
+componentDidMount(){
+ // console.log(MainStore.name+' başka sayfa da')
+  alert(MainStore.name+' başka sayfadan da çağırabilirsin')
+
 }
 
   render() {
